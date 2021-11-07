@@ -1,90 +1,67 @@
-@import '~bootstrap/scss/functions';
-@import './helpers/variables';
 @import '~bootstrap/scss/bootstrap';
-
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft JhengHei", Roboto, "Helvetica Neue", Arial, sans-serif;
-}
-
-section {
-  padding: 20px 0;
-}
-
-.game-section {
-  padding-top: 96px;
-}
-
-.header {
-  padding-top: 75.75px;
-}
-
-.music-play {
-  display: block;
-  position: relative;
-  &:hover .playbox {
-    display: block;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 23px;
-    background-color: rgba(0, 0, 0, 0.5);
+@import 'twicon.css';
+@import '~bootstrap/dist/css/bootstrap.css';
+@import '~bootstrap-vue/dist/bootstrap-vue.css';
+@import '~vue-select/dist/vue-select.css';
+.navbar{
+  margin:           0 -30px;
+  padding:          0.25rem 3rem !important;
+  background-color: white;
+  img{
+    max-width: 100px;
   }
-  .playbox{
-    display: none;
-  }
-  .onplay {
-    height: 100%;
-    color: white;
+  .nav-link{
+    color: #666666;
   }
 }
-
-.bg-images {
-  background-image: url(./assets/images/desi-mendoza-CuSHBGBdXc0-unsplash.jpg);
-  background-position: center center;
-  background-size: cover;
-  height: 500px;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  .bg-text {
-    z-index: 1;
+.banner{
+  background-image:    url('../images/banner.png');
+  background-position: right bottom; /*Positioning*/
+  background-repeat:   no-repeat; /*Prevent showing multiple background images*/
+  background-size:     500px;
+  margin:              15px 0;
+  background-color:    white;
+  border-radius:       1em;
+  padding:             2em 1em;
+  box-shadow:          0 14px 24px rgba(0, 0, 0, 0.04);
+  min-height:          350px;
+  h1{
+    font-size:   4.5rem;
+    font-weight: bold;
+    margin:      3%;
   }
-  &::after{
-    content: '';
-    position: absolute;
-    left: 0px;
-    right: 0px;
-    top: 0px;
-    bottom: 0px;
-    background-color: rgba(0, 37, 26, 0.5);
+  .search-form-group{
+    margin: 0 3%;
+    .vs__dropdown-toggle{
+      width:     200px;
+      height:    40px;
+      font-size: 1.1em;
+    }
+    .vs__dropdown-menu{
+      width: 200px;
+    }
+    .search-form{
+      display:     flex;
+      align-items: stretch;
+      margin:      1em 0;
+      flex-wrap:   wrap;
+      .keyWord-input{
+        width:         250px;
+        margin:        0 15px;
+        border:        1px solid rgba(60, 60, 60, 0.26) !important;
+        border-radius: 4px;
+        height:        40px;
+      }
+      .btn-success{
+        background-color: #3FB195;
+        border-color:     #40aa90;
+        padding:          5px 1.5em;
+        letter-spacing:   3px;
+        font-size:        1.2em;
+        &:hover{
+          opacity: 0.8;
+        }
+      }
+    }
   }
-}
-
-.hex-text {
-  color:white;
-  &:hover {
-    color: #69F0AE;
-  }
-}
-
-.hex-text-dark {
-  color:#00251a;
-  &:hover {
-    color: #69F0AE;
-  }
-}
-
-.sub-title {
-  text-decoration: none;
-  background-size: 100% 80%;
-  background-repeat: no-repeat;
-  background-image: linear-gradient(to top,#69f0ae 50%,rgba(0,0,0,0) 50.1%);
-  background-position: left 0 bottom 0;
-}
-
-.z-index-1 {
-  z-index: 1;
 }

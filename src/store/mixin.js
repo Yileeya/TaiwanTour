@@ -1,5 +1,4 @@
-// import store from '../config/store';
-// import axios from "axios";
+import moment from 'moment';
 import jsSHA from 'jssha';
 import Vue from 'vue';
 
@@ -13,8 +12,19 @@ const methods = {
         ShaObj.update('x-date: ' + GMTString);
         let HMAC = ShaObj.getHMAC('B64');
         let Authorization = 'hmac username="' + AppID + '", algorithm="hmac-sha1", headers="x-date", signature="' + HMAC + '"';
-        return {'Authorization': Authorization, 'X-Date': GMTString};
-    }
+        this.$store.commit('UPDATE_AUTHORIZATION_HEADER', {'Authorization': Authorization, 'X-Date': GMTString});
+    },
+    dateFormat(date, format) {
+        if(!date)
+            return null;
+
+        if(date instanceof Date) {
+            return moment(date).format(format);
+        } else {
+            date = date.replace(/-/g, '/');
+            return moment(date).format(format);
+        }
+    },
 };
 Vue.mixin({
     methods: methods

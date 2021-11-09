@@ -1,11 +1,11 @@
 <template>
     <div class="row">
         <div class="col-md-12">
-            <header-view/>
+            <header-view style="margin-bottom: 88px"/>
             <banner-search-view/>
 <!--            <loading-view v-if="isLoading"/>-->
             <router-view></router-view>
-<!--            <footer-view/>-->
+            <footer-view/>
         </div>
     </div>
 </template>
@@ -13,9 +13,10 @@
 <script>
     import HeaderView from '@/components/Common/HeaderView';
     import BannerSearchView from '@/components/Common/BannerSearchView';
+    import FooterView from '@/components/Common/FooterView';
     export default {
         name: "AppLayout",
-        components: {BannerSearchView, HeaderView},
+        components: {FooterView, BannerSearchView, HeaderView},
     }
 </script>
 

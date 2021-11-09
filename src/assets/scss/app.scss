@@ -3,10 +3,13 @@
 @import '~bootstrap/dist/css/bootstrap.css';
 @import '~bootstrap-vue/dist/bootstrap-vue.css';
 @import '~vue-select/dist/vue-select.css';
+@import "~swiper/dist/css/swiper.css";
+@import "~fontawesome-4.7/css/font-awesome.css";
 .navbar{
   margin:           0 -30px;
   padding:          0.25rem 3rem !important;
   background-color: white;
+  border-bottom:    2px solid #f2f2f2;
   img{
     max-width: 100px;
   }
@@ -65,3 +68,104 @@
     }
   }
 }
+.carousel-section{
+  margin: 30px;
+  .title{
+    display:     flex;
+    align-items: flex-end;
+    h3{
+      font-size:   1.7em;
+      font-weight: bold;
+    }
+    .more-link{
+      font-size:       0.8em;
+      font-weight:     bold;
+      color:           #3FB195;
+      display:         inline-block;
+      text-decoration: none;
+      transition:      0.3s;
+      &:hover{
+        cursor:     pointer;
+        font-size:  0.7em;
+        transition: 0.3s;
+      }
+      &::after{
+        content:    '';
+        display:    block;
+        width:      0;
+        height:     2px;
+        background: #40aa90;
+        transition: width .3s;
+        cursor:     pointer;
+      }
+      &:hover::after{
+        width: 100%;
+      }
+    }
+    i{
+      font-size:       1.5em;
+      color:           #C499FF;
+      text-decoration: underline;
+    }
+    .tw-icon-sm{
+      font-size: 2em;
+      margin:    0 0.25em;
+    }
+    .twicon-tapioca{
+      font-size: 1.6em;
+    }
+  }
+}
+.swiper-container{
+  .swiper-slide{
+    overflow:      hidden !important;
+    border-radius: 1.5em;
+    box-shadow:    3px 0 3px #0000000a;
+  }
+  .slide-pic{
+    height:              180px;
+    background-repeat:   no-repeat;
+    background-position: center;
+    background-size:     100%;
+    transition:          all 0.5s;
+    &:before{
+      content:          "";
+      display:          none;
+      height:           calc(100% - 4.5em - 5px);
+      width:            100%;
+      position:         absolute;
+      top:              0;
+      left:             0;
+      background-color: rgba(61, 63, 63, 0.3);
+      transition:       all 0.5s;
+    }
+    &:hover{
+      background-size: 120%;
+      transition:      all 0.5s;
+      cursor:          pointer;
+    }
+  }
+  .slide-pic-intro{
+    background:    white;
+    font-weight:   bold;
+    padding:       0.5em 1em;
+    box-shadow:    3px 3px 5px #0000000a;
+    margin-bottom: 5px;
+    .city{
+      color:       #3FB195;
+      font-weight: 500;
+      font-size:   1em;
+      margin:      0 0.5em;
+    }
+  }
+  .swiper-button-white{
+    color:      white !important;
+    transition: 0.2s;
+    &:hover{
+      opacity:    0.8 !important;
+      transform:  scale(0.8);
+      transition: 0.2s;
+    }
+  }
+}
+

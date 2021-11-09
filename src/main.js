@@ -10,9 +10,14 @@ import './store/mixin';
 
 import { BootstrapVue } from 'bootstrap-vue';
 Vue.use(BootstrapVue);
+
 import vSelect from 'vue-select';
 Vue.component('v-select', vSelect);
 
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+Vue.use(VueAwesomeSwiper);
+
+import 'fontawesome-4.7';
 new Vue({
   router,
   store,

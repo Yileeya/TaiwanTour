@@ -12,7 +12,7 @@ const routes = [
       {
         path: '',
         name: 'index',
-        // component: () => import('../components/HelloWorld')
+        component: () => import('../components/Home/IndexPage')
       },
     ],
   },

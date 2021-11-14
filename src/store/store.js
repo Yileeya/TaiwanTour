@@ -5,18 +5,29 @@ Vue.use(Vuex);
 export default new Vuex.Store({
     state: {
         isLoading: false,
-        authorizationHeader: {}
+        route: {},
+        detailPageData: null,
+        selectedCounty: '全台縣市',
+        searchKeyword: null
     },
     mutations: {
         ['UPDATE_LOADING'](state, isLoading) {
             state.isLoading = isLoading;
         },
-        ['UPDATE_AUTHORIZATION_HEADER'](state, authorizationHeader) {
-            state.authorizationHeader = authorizationHeader;
+        ['UPDATE_ROUTE'](state, route) {
+            state.route = route;
         },
+        ['UPDATE_DETAIL_PAGE_DATA'](state, detailPageData) {
+            state.detailPageData = detailPageData;
+        },
+        ['UPDATE_COUNTY'](state, selectedCounty) {
+            state.selectedCounty = selectedCounty;
+        },
+        ['UPDATE_SEARCH_KEYWORD'](state, searchKeyword) {
+            state.searchKeyword = searchKeyword;
+        }
     },
-    actions: {
-    },
+    actions: {},
     getters: {
         // isLoading(state) {
         //     return state.isLoading;

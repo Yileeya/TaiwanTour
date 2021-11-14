@@ -5,6 +5,19 @@
 @import '~vue-select/dist/vue-select.css';
 @import "~swiper/dist/css/swiper.css";
 @import "~fontawesome-4.7/css/font-awesome.css";
+body{
+  font-size: 16px;
+  i{
+    color: #3fb195;
+  }
+  a{
+    color: initial;
+    &:hover{
+      color:           initial;
+      text-decoration: none !important;
+    }
+  }
+}
 .navbar{
   margin:           0 -30px;
   padding:          0.25rem 3rem !important;
@@ -13,8 +26,34 @@
   img{
     max-width: 100px;
   }
-  .nav-link{
-    color: #666666;
+  .nav-item{
+    a{
+      color: rgba(0, 0, 0, 0.5) !important;
+      &:hover{
+        color:           #666666 !important;
+        text-decoration: none;
+      }
+    }
+  }
+}
+.v-select{
+  background-color: white;
+  max-width:        250px;
+  .vs__dropdown-toggle{
+    height:    40px;
+    font-size: 1.1em;
+  }
+}
+.btn-success{
+  background-color: #3FB195;
+  border-color:     #40aa90;
+  padding:          5px 1.5em;
+  letter-spacing:   3px;
+  font-size:        1.2em;
+  &:hover{
+    background-color: #3FB195;
+    border-color:     #40aa90;
+    opacity:          0.8;
   }
 }
 .banner{
@@ -55,16 +94,15 @@
         border-radius: 4px;
         height:        40px;
       }
-      .btn-success{
-        background-color: #3FB195;
-        border-color:     #40aa90;
-        padding:          5px 1.5em;
-        letter-spacing:   3px;
-        font-size:        1.2em;
-        &:hover{
-          opacity: 0.8;
-        }
-      }
+    }
+  }
+  @media (max-width: 768px){
+    background-size: 70%;
+    align-items:     flex-start !important;
+    h1{
+      font-size:   3rem;
+      font-weight: bold;
+      margin:      0;
     }
   }
 }
@@ -116,56 +154,54 @@
     }
   }
 }
-.swiper-container{
-  .swiper-slide{
-    overflow:      hidden !important;
-    border-radius: 1.5em;
-    box-shadow:    3px 0 3px #0000000a;
-  }
-  .slide-pic{
-    height:              180px;
-    background-repeat:   no-repeat;
-    background-position: center;
-    background-size:     100%;
+.card{
+  position:      relative;
+  overflow:      hidden;
+  height:        100%;
+  border-radius: 1.5em;
+  .card-img{
+    height:              200px;
     transition:          all 0.5s;
-    &:before{
-      content:          "";
-      display:          none;
-      height:           calc(100% - 4.5em - 5px);
-      width:            100%;
-      position:         absolute;
-      top:              0;
-      left:             0;
-      background-color: rgba(61, 63, 63, 0.3);
-      transition:       all 0.5s;
-    }
-    &:hover{
+    background-size:     100%;
+    background-position: center;
+  }
+  .card-hover-description{
+    position:         absolute;
+    top:              0;
+    bottom:           0;
+    left:             0;
+    right:            0;
+    color:            #fff;
+    visibility:       hidden;
+    opacity:          0;
+    transition:       opacity .3s, visibility .3s;
+    display:          flex;
+    align-items:      center;
+    justify-content:  center;
+    font-size:        1.5em;
+    letter-spacing:   3px;
+    background-color: rgba(61, 63, 63, 0.3);
+    height:           200px; //跟圖片的height一樣
+  }
+  .card-body{
+    padding:         1rem 1.25rem;
+    display:         flex;
+    flex-direction:  column;
+    justify-content: space-around;
+  }
+  &:hover{
+    cursor: pointer;
+    .card-img{
       background-size: 120%;
       transition:      all 0.5s;
-      cursor:          pointer;
+    }
+    .card-hover-description{
+      visibility: visible;
+      opacity:    1;
     }
   }
-  .slide-pic-intro{
-    background:    white;
-    font-weight:   bold;
-    padding:       0.5em 1em;
-    box-shadow:    3px 3px 5px #0000000a;
-    margin-bottom: 5px;
-    .city{
-      color:       #3FB195;
-      font-weight: 500;
-      font-size:   1em;
-      margin:      0 0.5em;
-    }
-  }
-  .swiper-button-white{
-    color:      white !important;
-    transition: 0.2s;
-    &:hover{
-      opacity:    0.8 !important;
-      transform:  scale(0.8);
-      transition: 0.2s;
-    }
-  }
+}
+.swiper-slide{
+  height: auto;
 }
 

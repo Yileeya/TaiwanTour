@@ -2,7 +2,6 @@
     <div class="row">
         <div class="col-md-12">
             <header-view style="margin-bottom: 88px"/>
-            <banner-search-view/>
 <!--            <loading-view v-if="isLoading"/>-->
             <router-view></router-view>
             <footer-view/>
@@ -12,11 +11,10 @@
 
 <script>
     import HeaderView from '@/components/Common/HeaderView';
-    import BannerSearchView from '@/components/Common/BannerSearchView';
     import FooterView from '@/components/Common/FooterView';
     export default {
         name: "AppLayout",
-        components: {FooterView, BannerSearchView, HeaderView},
+        components: {FooterView, HeaderView},
     }
 </script>
 

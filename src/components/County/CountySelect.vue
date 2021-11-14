@@ -9,25 +9,23 @@
 </template>
 
 <script>
+    import {mapState} from 'vuex';
+
     export default {
         name: "CountySelect",
-        props:{
-          value:{
-              type: String,
-              default: '全台縣市'
-          }
+        computed:{
+            ...mapState({
+                selectedCountyState: state => state.selectedCounty
+            })
         },
         watch:{
-            value(newVal){
-                this.selectedCounty = newVal
-            },
             selectedCounty(newVal){
-                this.$emit('input', newVal)
+                this.$store.commit('UPDATE_COUNTY', newVal)
             }
         },
         data(){
             return{
-                selectedCounty: this.value,
+                selectedCounty: '全台縣市',
                 counties: [
                     '全台縣市',
                     '基隆市',
@@ -53,6 +51,11 @@
                     '金門縣',
                     '連江縣'
                 ]
+            }
+        },
+        created(){
+            if(this.selectedCountyState !== '全台縣市'){
+                this.selectedCounty = this.selectedCountyState;
             }
         }
     }
